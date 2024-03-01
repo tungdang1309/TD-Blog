@@ -3,7 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDBlog.Api", "src\TDBlog.Api\TDBlog.Api.csproj", "{599BAA0B-016D-48E4-BE6A-E24F9B69F99F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDBlog.Core", "src\TDBlog.Core\TDBlog.Core.csproj", "{145538FC-67E0-47FC-84D5-48A15731BA52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDBlog.Data", "src\TDBlog.Data\TDBlog.Data.csproj", "{A515B99B-D607-490D-9E83-E395E500D035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDBlog.WebApp", "src\TDBlog.WebApp\TDBlog.WebApp.csproj", "{9071A403-15C1-4A60-93C1-4E967C48E6DB}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{599BAA0B-016D-48E4-BE6A-E24F9B69F99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{599BAA0B-016D-48E4-BE6A-E24F9B69F99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{599BAA0B-016D-48E4-BE6A-E24F9B69F99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{599BAA0B-016D-48E4-BE6A-E24F9B69F99F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{145538FC-67E0-47FC-84D5-48A15731BA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145538FC-67E0-47FC-84D5-48A15731BA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145538FC-67E0-47FC-84D5-48A15731BA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145538FC-67E0-47FC-84D5-48A15731BA52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A515B99B-D607-490D-9E83-E395E500D035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A515B99B-D607-490D-9E83-E395E500D035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A515B99B-D607-490D-9E83-E395E500D035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A515B99B-D607-490D-9E83-E395E500D035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9071A403-15C1-4A60-93C1-4E967C48E6DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9071A403-15C1-4A60-93C1-4E967C48E6DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9071A403-15C1-4A60-93C1-4E967C48E6DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9071A403-15C1-4A60-93C1-4E967C48E6DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
