@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDBlog.Core.Repositories;
 
 namespace TDBlog.Data.SeedWorks
 {
     public interface IUnitOfWork
     {
-        Task<int> Complate();
+        IPostRepository Posts { get; }
+        Task<int> CompleteAsync();
     }
 }
