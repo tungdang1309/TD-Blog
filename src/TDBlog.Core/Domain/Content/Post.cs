@@ -22,7 +22,7 @@ namespace TDBlog.Core.Domain.Content
         [Column(TypeName = "varchar(250)")]
         public required string Slug { get; set; }
         [MaxLength(500)]
-        public required string Descripttion { get; set; }
+        public string? Descripttion { get; set; }
         [Required]
         public Guid CategoryId { get; set; }
         [MaxLength(500)]
@@ -42,6 +42,19 @@ namespace TDBlog.Core.Domain.Content
         public bool IsPaid { get; set; }
         public double RoyaltyAmount { get; set; }
         public PostStatus Status { get; set; }
+        [Required]
+        [Column(TypeName = "varchar(250)")]
+        public required string CategorySlug { set; get; }
+
+        [MaxLength(250)]
+        [Required]
+        public required string CategoryName { set; get; }
+        [MaxLength(250)]
+        public string AuthorUserName { set; get; }
+        [MaxLength(250)]
+        public string AuthorName { set; get; }
+
+        public DateTime? PaidDate { get; set; }
 
     }
     public enum PostStatus

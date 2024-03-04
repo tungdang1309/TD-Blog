@@ -11,13 +11,13 @@ namespace TDBlog.Core.Domain.Content
 {
     [Table("Series")]
     [Index(nameof(Slug), IsUnique = true)]
-    internal class Series
+    public class Series
     {
         [Key]
         public Guid Id { get; set; }
         [MaxLength(250)]
         public required string Name { get; set; }
-        public required string Description { get; set; }
+        public string? Description { get; set; }
         [Column(TypeName ="nvarchar(250)")]
         public required string Slug { get; set; }
         public bool IsActive { get; set; }

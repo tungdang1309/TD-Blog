@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 namespace TDBlog.Core.Domain.Content
 {
     [Table("PostInSeries")]
-    [Index(nameof(PostId), IsUnique = true)]
+    [PrimaryKey(nameof(PostId), nameof(SeriesId))]
     public class PostInSeries
     {
         public Guid PostId { get; set; }
-        public Guid Series { get; set; }
+        public Guid SeriesId { get; set; }
         public int DisplayOrder { get; set; }
     }
 }

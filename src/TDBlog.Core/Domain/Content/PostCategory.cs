@@ -25,7 +25,7 @@ namespace TDBlog.Core.Domain.Content
         public bool IsActive { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime? DateModified { get; set; }
-        public string? SeoKeywords { get; set; }
+
         [MaxLength(160)]
         public string? SeoDescription { get; set; }
         public string? SortOrder { get; set; }
