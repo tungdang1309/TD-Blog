@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace TDBlog.Core.Domain.Identity
 {
     [Table("AppUsers")]
-    public class AppUser : IdentityRole<Guid>
+    public class AppUser : IdentityUser<Guid>
     {
         [Required]
         [MaxLength(100)]
@@ -23,9 +23,12 @@ namespace TDBlog.Core.Domain.Identity
         public DateTime? RefreshToKenExpiryTime { get; set;}
         public DateTime DateCreated { get; set;}
         public DateTime? Dob { get; set;}
+        [MaxLength(500)]
         public string? Avatar {  get; set;}
         public DateTime? VipStartDate { get; set;}
         public DateTime? VipExpireDate { get; set;}
         public DateTime? LastLoginDate { get;set;}
+        public double Balance { get; set;}  
+
     }
 }
