@@ -17,6 +17,15 @@ using TDBlog.Data.SeedWorks;
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 var connectionString = configuration.GetConnectionString("DefaultConnection");
+var TDCorsPolicy = "TDCorsPolicy";
+
+builder.Services.AddCors(o => o.AddPolicy(TDCorsPolicy, builder =>
+{
+    builder.AllowAnyMethod()
+    .AllowAnyHeader()
+    .WithOrigins(configuration["AllowedOrigins"])
+    .AllowCredentials();
+}));
 
 
 //Config DB Context and ASP.NET Core Identity
@@ -108,7 +117,7 @@ if (app.Environment.IsDevelopment())
         c.DisplayRequestDuration();
     });
 }
-
+app.UseCors(TDCorsPolicy);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

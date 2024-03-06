@@ -83,7 +83,7 @@ $ npm update
 ### Basic usage
 
 ``` bash
-# dev server with hot reload at http://localhost:4200
+# dev server with hot reload at https://localhost:4200
 $ npm start
 ```
 
