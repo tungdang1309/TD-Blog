@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 using TDBlog.Api;
+using TDBlog.Api.Services;
+using TDBlog.Core.ConfigOptions;
 using TDBlog.Core.Domain.Identity;
 using TDBlog.Core.Models.Content;
 using TDBlog.Core.Repositories;
@@ -46,6 +49,9 @@ builder.Services.Configure<IdentityOptions>(options =>
 // Add services to the container.
 builder.Services.AddScoped(typeof(IRepository<,>), typeof(RepositoryBase<,>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+
+
 //Business services and repositories
 var services = typeof(PostRepository).Assembly.GetTypes()
     .Where(x => x.GetInterfaces().Any(i => i.Name == typeof(IRepository<,>).Name)
@@ -60,7 +66,15 @@ foreach(var service in services)
     }
 }
 
+//Auto Mapper
 builder.Services.AddAutoMapper(typeof(PostInListDto));
+
+//Authen and Author
+builder.Services.Configure<JwtTokenSettings>(configuration.GetSection("JwtTokenSettings"));
+builder.Services.AddScoped<SignInManager<AppUser>, SignInManager<AppUser>>();
+builder.Services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
+builder.Services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 //Default config for ASP.NET Core
 builder.Services.AddControllers();
