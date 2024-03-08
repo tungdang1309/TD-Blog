@@ -4,16 +4,16 @@ import { ButtonModule, FormModule, GridModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
-import { Page404Component } from './page404.component';
+import { Page403Component } from './page403.component';
 
-describe('Page404Component', () => {
-  let component: Page404Component;
-  let fixture: ComponentFixture<Page404Component>;
+describe('Page403Component', () => {
+  let component: Page403Component;
+  let fixture: ComponentFixture<Page403Component>;
   let iconSetService: IconSetService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Page404Component ],
+      declarations: [ Page403Component ],
       imports: [FormModule, GridModule, ButtonModule, IconModule],
       providers: [IconSetService]
     })
@@ -24,7 +24,7 @@ describe('Page404Component', () => {
     iconSetService = TestBed.inject(IconSetService);
     iconSetService.icons = { ...iconSubset };
 
-    fixture = TestBed.createComponent(Page404Component);
+    fixture = TestBed.createComponent(Page403Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
