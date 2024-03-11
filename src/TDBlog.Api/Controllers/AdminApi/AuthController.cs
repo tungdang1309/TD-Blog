@@ -53,10 +53,10 @@ namespace TDBlog.Api.Controllers.AdminApi
             }
 
             //Authorization
-            var roles = await _userManager.GetRolesAsync(user);
-            var permissions = await this.GetPermissionByUserIdAsync(user.Id.ToString());
+             var roles = await _userManager.GetRolesAsync(user);
+            var permissions =  await this.GetPermissionByUserIdAsync(user.Id.ToString());
             var claims = new[]
-             {
+            {
                     new Claim(JwtRegisteredClaimNames.Email, user.Email),
                     new Claim(UserClaims.Id, user.Id.ToString()),
                     new Claim(ClaimTypes.NameIdentifier, user.UserName),
@@ -68,6 +68,7 @@ namespace TDBlog.Api.Controllers.AdminApi
             };
             var accessToken = _tokenService.GenerateAccessToken(claims);
             var refreshToken = _tokenService.GenerateRefreshToken();
+
             user.RefreshToken = refreshToken;
             user.RefreshToKenExpiryTime = DateTime.Now.AddDays(30);
             await _userManager.UpdateAsync(user);
