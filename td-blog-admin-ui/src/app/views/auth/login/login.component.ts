@@ -35,6 +35,7 @@ export class LoginComponent implements OnDestroy{
    this.ngUnsubscribe.complete();
   }
  login(){
+  this.loading = true;
   var request: LoginRequest = new LoginRequest({
     userName: this.loginForm.controls['userName'].value,
     password: this.loginForm.controls['password'].value

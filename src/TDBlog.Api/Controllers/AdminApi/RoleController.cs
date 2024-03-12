@@ -83,7 +83,7 @@ namespace TDBlog.Api.Controllers.AdminApi
 
         [HttpGet]
         [Route("paging")]
-        [Authorize(Permissions.Roles.View)]
+        //[Authorize(Permissions.Roles.View)]
         public async Task<ActionResult<PagedResult<RoleDto>>> GetRolesAllPaging(string? keyword, int pageIndex = 1, int pageSize = 10)
         {
             var query = _roleManager.Roles;
