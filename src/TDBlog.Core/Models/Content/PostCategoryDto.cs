@@ -1,33 +1,33 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using TDBlog.Core.Domain.Content;
 
-namespace TDBlog.Core.Domain.Content
+namespace TDBlog.Core.Models.Content
 {
-    [Table("PostCategories")]
-    [Index(nameof(Slug), IsUnique = true)]
-    public class PostCategory
+    public class PostCategoryDto
     {
-        [Key]
-        public Guid Id { get; set; }
-        [MaxLength(250)]
-        public required string Name { get; set; }
-        [Column(TypeName = "nvarchar(250)")]
 
+        public Guid Id { get; set; }
+        public required string Name { get; set; }
         public required string Slug { get; set; }
         public Guid? ParentId { get; set; }
         public bool IsActive { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime? DateModified { get; set; }
-
-        [MaxLength(160)]
         public string? SeoDescription { get; set; }
         public string? SortOrder { get; set; }
+        public class AutoMapperProfiles : Profile
+        {
+            public AutoMapperProfiles()
+            {
+                CreateMap<PostCategory, PostCategoryDto>();
+            }
+        }
     }
 }

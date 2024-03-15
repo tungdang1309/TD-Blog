@@ -12,8 +12,8 @@ using TDBlog.Data;
 namespace TDBlog.Data.Migrations
 {
     [DbContext(typeof(TDBlogContext))]
-    [Migration("20240304034548_Initial")]
-    partial class Initial
+    [Migration("20240315092355_TDBlogCMS-1")]
+    partial class TDBlogCMS1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -256,11 +256,9 @@ namespace TDBlog.Data.Migrations
 
             modelBuilder.Entity("TDBlog.Core.Domain.Content.PostCategory", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
