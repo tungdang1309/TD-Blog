@@ -12,7 +12,8 @@ export class AuthGuard {
     canActivate(activateRoute: ActivatedRouteSnapshot, routerState: RouterStateSnapshot): boolean {
         let requiredPolicy = activateRoute.data["requiredPolicy"] as string;
         var loggedInUser = this.tokenService.getUser();
-        if (loggedInUser) {
+        if (loggedInUser) 
+        {
             var listPermission = JSON.parse(loggedInUser.permissions);
             if (listPermission != null && listPermission != '' && listPermission.filter(x => x == requiredPolicy).length > 0)
                 return true;
@@ -25,7 +26,8 @@ export class AuthGuard {
                 return false;
             }
         }
-        else {
+        else 
+        {
             this.router.navigate([UrlConstants.LOGIN], {
                 queryParams: {
                     returnUrl: routerState.url

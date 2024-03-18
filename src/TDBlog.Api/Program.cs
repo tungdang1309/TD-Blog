@@ -141,6 +141,7 @@ if (app.Environment.IsDevelopment())
         c.DisplayRequestDuration();
     });
 }
+app.UseStaticFiles();
 app.UseCors(TDCorsPolicy);
 app.UseHttpsRedirection();
 app.UseAuthentication();

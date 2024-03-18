@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TDBlog.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/test")]
     [ApiController]
     [Authorize]
     public class TestController : ControllerBase
