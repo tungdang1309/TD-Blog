@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TDBlog.Core.Domain.Content;
 using TDBlog.Core.Domain.Identity;
+using TDBlog.Core.Domain.Royalty;
 
 namespace TDBlog.Data
 {
@@ -24,6 +25,7 @@ namespace TDBlog.Data
         public DbSet<Series> Series { get; set; }
 
         public DbSet<PostInSeries> PostInSeries { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

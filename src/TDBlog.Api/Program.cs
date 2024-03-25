@@ -15,9 +15,11 @@ using TDBlog.Core.Domain.Identity;
 using TDBlog.Core.Models.Content;
 using TDBlog.Core.Repositories;
 using TDBlog.Core.SeedWorks;
+using TDBlog.Core.Services;
 using TDBlog.Data;
 using TDBlog.Data.Repositories;
 using TDBlog.Data.SeedWorks;
+using TDBlog.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -91,6 +93,7 @@ builder.Services.AddScoped<SignInManager<AppUser>, SignInManager<AppUser>>();
 builder.Services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+builder.Services.AddScoped<IRoyaltyService, RoyaltyService>();
 
 
 //Default config for ASP.NET Core

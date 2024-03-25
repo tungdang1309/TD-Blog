@@ -44,7 +44,7 @@ namespace TDBlog.Api.Controllers.AdminApi
         }
 
         [HttpGet("paging")]
-        //[Authorize(Users.View)]
+        [Authorize(Users.View)]
         public async Task<ActionResult<PagedResult<UserDto>>> GetAllUsersPaging(string? keyword, int pageIndex, int pageSize)
         {
             var query = _userManager.Users;
