@@ -6,6 +6,7 @@ using TDBlog.Core.Models;
 using TDBlog.Core.Repositories;
 using TDBlog.Data.SeedWorks;
 using TDBlog.Data;
+using static TDBlog.Core.SeedWorks.Constants.Permissions;
 
 namespace TeduBlog.Data.Repositories
 {
@@ -37,6 +38,11 @@ namespace TeduBlog.Data.Repositories
                 RowCount = totalRow,
                 PageSize = pageSize
             };
+        }
+
+        public async Task<bool> HasPost(Guid categoryId)
+        {
+            return await _context.Posts.AnyAsync(x => x.CategoryId == categoryId);
         }
     }
 }
